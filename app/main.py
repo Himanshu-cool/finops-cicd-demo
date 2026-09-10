@@ -1,34 +1,8 @@
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
+@app.route("/budget")
+def budget():
     return jsonify({
-        "application": "FinOps CI/CD Demo",
-        "status": "running"
+        "monthly_budget": 500,
+        "current_spend": 350,
+        "remaining": 150
     })
 
-
-@app.route("/health")
-def health():
-    return jsonify({
-        "status": "healthy"
-    })
-
-
-@app.route("/cost")
-def cost():
-    return jsonify({
-        "service": "Amazon EC2",
-        "monthly_cost": 125.50,
-        "currency": "USD"
-    })
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
-if __name__ == '__main__':
-    app.run(debug=True)
