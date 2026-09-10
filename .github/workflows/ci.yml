@@ -37,4 +37,8 @@ jobs:
 
       - name: Run linting
         run: |
+<<<<<<< HEAD
           flake8 app
+=======
+          flake8 app
+>>>>>>> 5558405571543a566205a9bae0a412dc2a611377
