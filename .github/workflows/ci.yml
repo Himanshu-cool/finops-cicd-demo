@@ -31,14 +31,14 @@ jobs:
           pip install -r requirements.txt
           pip install pytest flake8
 
-      - name: Run tests
+      - name: Run unit tests
         run: |
-          pytest
+          python -m pytest
 
       - name: Run linting
         run: |
-<<<<<<< HEAD
           flake8 app
-=======
-          flake8 app
->>>>>>> 5558405571543a566205a9bae0a412dc2a611377
+
+      - name: Build Docker image
+        run: |
+          docker build -t finops-cicd-demo:${{ github.sha }} .
